@@ -11,12 +11,7 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 
-		if (args.length < 1) {
-			System.out.println("Input <csv file>");
-			System.exit(-1);
-		}
-
-		String filename = args[0];
+		String filename = "day.csv";
 		File file = new File(filename);
 
 		if (!file.exists()) {
@@ -53,7 +48,7 @@ public class Main {
 			String weather = weathers[e.getWeather() - 1];
 			String holiday = (e.isHoliday()) ? "a holiday" : "not a holiday";
 
-			System.out.printf("The %s recorded number of cyclists was in %s, on a %s in the month of %s.\nThere were a total of %d cyclists. The weather was %s.\n%s was %s.\n\n",
+			System.out.printf("The %s (position) recorded number of cyclists was in %s (season), on a %s (day) in the month of %s (month).\nThere were a total of %d (total) cyclists. The weather was %s (weather).\n%s (day) was %s.\n\n",
 								position, season, day, month, total, weather, day, holiday);
 			i++;
 			
